@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 char* readFile(char* path) {
     FILE *fp;
@@ -15,4 +16,12 @@ char* readFile(char* path) {
     fclose(fp);
 
     return content;
+}
+
+char* copyString(char* input) {
+    int length = 1;
+    while (input[length - 1] != '\0') length++;
+    char* copy = malloc(length + 1);
+    strncpy(copy, input, length);
+    return copy;
 }

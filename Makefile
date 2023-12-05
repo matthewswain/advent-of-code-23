@@ -3,7 +3,7 @@ run: build
 
 build: shared
 	mkdir -p bin
-	gcc -o bin/main -Wall -Werror -Wextra -Lbin -lshared src/main.c src/01/*.c src/02/*.c src/03/*.c
+	gcc -o bin/main -Wall -Werror -Wextra -Lbin -lshared src/main.c src/**/*.c
 
 clean:
 	rm -rf bin/*
@@ -16,15 +16,15 @@ shared:
 
 test: shared
 	mkdir -p bin
-	gcc -o bin/test -Wall -Werror -Wextra -Lbin -lshared src/test.c src/01/*.c src/02/*.c src/03/*.c
+	gcc -o bin/test -Wall -Werror -Wextra -Lbin -lshared src/test.c src/**/*.c
 	bin/test
 
 debug: shared
 	mkdir -p bin
-	gcc -g -o bin/main -Wall -Werror -Wextra -Lbin -lshared src/main.c src/01/*.c src/02/*.c src/03/*.c
+	gcc -g -o bin/main -Wall -Werror -Wextra -Lbin -lshared src/main.c src/**/*.c
 	lldb bin/main
 
 debug_test: shared
 	mkdir -p bin
-	gcc -g -o bin/test -Wall -Werror -Wextra -Lbin -lshared src/test.c src/01/*.c src/02/*.c src/03/*.c
+	gcc -g -o bin/test -Wall -Werror -Wextra -Lbin -lshared src/test.c src/**/*.c
 	lldb bin/test

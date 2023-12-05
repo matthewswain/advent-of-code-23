@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "../shared/main.h"
 #include "lib.h"
 
 int day_01_part_2(char* data) {
     int total = 0;
 
-    char *line = strtok(data, "\n");
+    char* copy = copyString(data);
+    char *line = strtok(copy, "\n");
 
     int first, last;
 
@@ -32,5 +34,6 @@ int day_01_part_2(char* data) {
         line = strtok(NULL, "\n");
     }
 
+    free(copy);
     return total;
 }

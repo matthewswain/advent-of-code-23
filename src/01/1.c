@@ -3,16 +3,12 @@
 #include <stdlib.h>
 #include <string.h>
 #include "lib.h"
+#include "../shared/main.h"
 
 int day_01_part_1(char* data) {
     int total = 0;
 
-    // copy input so it isn't modified by strtok
-    int length = 1;
-    while (data[length - 1] != '\0') length++;
-    char* copy = malloc(length + 1);
-    strncpy(copy, data, length);
-
+    char* copy = copyString(data);
     char *line = strtok(copy, "\n");
 
     char first = '\0';

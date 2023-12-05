@@ -6,6 +6,7 @@
 #include "02/2.h"
 #include "03/1.h"
 #include "03/2.h"
+#include "04/1.h"
 #include "shared/main.h"
 
 int main() {
@@ -21,6 +22,10 @@ int main() {
 
     char* day_03_data = readFile("data/03");
     printf("03/1: %d\n", day_03_part_1(day_03_data));
-    printf("03/2: %d\n", day_03_part_2(day_03_data));
+    printf("03/2: %d\n\n", day_03_part_2(day_03_data));
     free(day_03_data);
+
+    char* day_04_data = readFile("data/04");
+    printf("04/1: %d\n", day_04_part_1(day_04_data));
+    free(day_04_data);
 }
