@@ -6,6 +6,7 @@
 #include "03/1.h"
 #include "03/2.h"
 #include "04/1.h"
+#include "04/2.h"
 #include <stdlib.h>
 
 int result = 0; 
@@ -70,6 +71,14 @@ void test_day_04_part_1() {
     free(data);
 }
 
+void test_day_04_part_2() {
+    char* data = readFile("data/04.test");
+    int expected = 30;
+    int actual = day_04_part_2(data);
+    if (expected != actual) fail();
+    free(data);
+}
+
 int main() {
     test_day_01_part_1();
     test_day_01_part_2();
@@ -81,6 +90,7 @@ int main() {
     test_day_03_part_2();
 
     test_day_04_part_1();
+    test_day_04_part_2();
 
     return result;
 }

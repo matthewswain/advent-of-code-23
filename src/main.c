@@ -7,6 +7,7 @@
 #include "03/1.h"
 #include "03/2.h"
 #include "04/1.h"
+#include "04/2.h"
 #include "shared/main.h"
 
 int main() {
@@ -27,5 +28,6 @@ int main() {
 
     char* day_04_data = readFile("data/04");
     printf("04/1: %d\n", day_04_part_1(day_04_data));
+    printf("04/2: %d\n", day_04_part_2(day_04_data));
     free(day_04_data);
 }
